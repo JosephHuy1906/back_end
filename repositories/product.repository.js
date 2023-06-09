@@ -33,7 +33,7 @@ const getById = async (id) => {
 const getCate1 = async () => {
     const product = await ProductModel.find()
         .limit(6)
-        .skip(Math.random() * 50);
+        .skip(Math.random() * 30);
     return product;
 };
 const getCate2 = async () => {
