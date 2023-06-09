@@ -26,7 +26,11 @@ const getAll = async () => {
 };
 
 const getById = async (id) => {
-    const product = await ProductModel.findById(id);
+    const product = await ProductModel.findById(id).populate({
+        path: 'category',
+        strictPopulate: true,
+        select: "name"
+    });
     return product;
 };
 
@@ -36,6 +40,7 @@ const getCate1 = async () => {
         .skip(Math.random() * 30);
     return product;
 };
+
 const getCateById = async (id) => {
     const product = await ProductModel.find({categoryId: id})
         .limit(6)
