@@ -13,7 +13,7 @@ const port = process.env.PORT || 3002;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', rootRouter);
-
+app.use('/images', express.static('public/images'))
 
 
 app.listen(port, async () => {
