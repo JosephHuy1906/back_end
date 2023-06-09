@@ -4,7 +4,7 @@ import mongoose, { Schema } from 'mongoose';
 export default mongoose.model(
     'category',
     new Schema({
-        categoryId: { type: Number },
+        categoryId: { type: ObjectId },
         name: { type: String, required: true },
     },
     {

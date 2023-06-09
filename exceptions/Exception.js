@@ -4,11 +4,13 @@ export default class Exception extends Error {
     static WRONG_SERVER_NAME = 'Wrong server name/connection string';
     static CANNOT_CONNECT_MONGODB = 'Cannot connect to MongoDB';
     static ERROR_EXIST = 'User already exists';
-    static ERROR_EXIST_ROOM = 'Room does not exist';
-    static ERROR_EXIST_ROOM_ID = 'Room Id does not exist';
+    static ERROR_EXIST_USER = 'user does not exist';
+    static ERROR_EXIST_USER_ID = 'user Id does not exist';
     static CANNOT_REGISTER_USER = 'Cannot register user';
+
+    static ERROR_EXIST_PRODUCT = 'product does not exist';
     static CANNOT_PRODUCT = 'Cannot create new product';
-    static CANNOT_UPDATE_ROOM = 'Cannot update room';
+    static CANNOT_UPDATE_PRODUCT = 'Cannot update product';
     static CANNOT_PRICE = 'Cannot room Price';
     static CANNOT_NOT_ID = 'Cannot not Id';
     static WRONG_USERNAME_PASSWORD = 'Wrong username and password';
