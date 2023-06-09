@@ -36,6 +36,13 @@ const getCate1 = async () => {
         .skip(Math.random() * 30);
     return product;
 };
+const getCateById = async (id) => {
+    const product = await ProductModel.find({categoryId: id})
+        .limit(6)
+        .skip(Math.random() * 6);
+    return product;
+};
+
 const getCate2 = async () => {
     const product = await ProductModel.find()
         .limit(3)
@@ -91,4 +98,5 @@ export default {
     getProductSearch,
     updateProduct,
     deleteProduct,
+    getCateById
 };

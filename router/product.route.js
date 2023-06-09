@@ -10,7 +10,7 @@ router.get('/cate2', productController.getCate2);
 router.get('/search', productController.getProductSearch);
 router.get('/best', productController.getProductBest);
 router.get('/:id', productController.getById);
-router.get('/cate/:id', productController.getById);
+router.get('/cate/:id', productController.getCateById);
 router.put('/:id', productController.updateProduct);
 router.delete('/:id', productController.deleteProduct);
 router.get('/img/:id');

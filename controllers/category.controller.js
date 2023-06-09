@@ -36,8 +36,8 @@ const getById = async (req, res) => {
 
 const create = async (req, res, next) => {
     try {
-        const { name } = req.body;
-        await categoryRepository.create({ name });
+        const { categoryId, name } = req.body;
+        await categoryRepository.create({ categoryId, name });
 
         res.status(httpStatusCode.INSERT_OK).json({
             status: 201,

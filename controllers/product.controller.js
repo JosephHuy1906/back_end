@@ -58,6 +58,21 @@ const getById = async (req, res) => {
         });
     }
 };
+const getCateById = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const data = await productRepositories.getCateById(id);
+        res.status(httpStatusCode.INSERT_OK).json({
+            status: 200,
+            message: 'get product by cate Id successfuly',
+            data: data,
+        });
+    } catch (errors) {
+        res.status(httpStatusCode.INTERNAL_SERVER_ERROR).json({
+            message: errors.toString(),
+        });
+    }
+};
 const getCate1 = async (req, res) => {
     try {
         const data = await productRepositories.getCate1();
@@ -164,4 +179,5 @@ export default {
     getProductSearch,
     updateProduct,
     deleteProduct,
+    getCateById
 };

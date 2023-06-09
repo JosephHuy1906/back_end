@@ -12,9 +12,10 @@ const getById = async (id) => {
     const category = await CategoryModel.findById(id);
     return category;
 };
-const create = async ({name}) => {
+const create = async ({categoryId,name}) => {
     try {
         const newProduct = await CategoryModel.create({
+            categoryId,
             name
         });
         return newProduct;
@@ -43,7 +44,7 @@ const update = async (id, name) => {
 };
 
 const remove = async (id) => {
-    const product = await ProductModel.deleteOne({ _id: id });
+    const product = await ProductModel.deleteOne({ categoryId: id });
     return product;
 };
 
