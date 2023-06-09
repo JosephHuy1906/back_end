@@ -4,7 +4,7 @@ import { productRepositories } from '../repositories/index.js';
 
 const create = async (req, res, next) => {
     try {
-        const file = req.file.path;
+        const file = req.file.filename;
         console.log(file);
         if(!file){
             const error = new Error('Please upload a file');
