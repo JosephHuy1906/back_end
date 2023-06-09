@@ -2,7 +2,6 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 dotenv.config();
 import bodyParser from 'body-parser';
-import cors from 'cors';
 import connect from './configs/database.js';
 import rootRouter from './router/index.js';
 import swaggerUi from 'swagger-ui-express';
@@ -16,9 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', rootRouter);
 
 
-app.use(cors({
-    origin: '*'
-}));
 
 app.listen(port, async () => {
     await connect();
