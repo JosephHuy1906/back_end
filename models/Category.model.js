@@ -5,6 +5,7 @@ export default mongoose.model(
     'category',
     new Schema(
         {
+            _id: {type: ObjectId},
             categoryId: { type: Number },
             name: { type: String, required: true },
         },

@@ -1,20 +1,20 @@
 import Exception from '../exceptions/Exception.js';
-import { CategoryModel } from '../models/index.js';
+import categorySchema from '../models/schemas/Category.schema.js'
 
 
 
 const getAll = async () => {
-    const category = await CategoryModel.find();
+    const category = await categorySchema.find();
     return category;
 };
 
 const getById = async (id) => {
-    const category = await CategoryModel.findById(id);
+    const category = await categorySchema.findById(id);
     return category;
 };
 const create = async ({categoryId,name}) => {
     try {
-        const newProduct = await CategoryModel.create({
+        const newProduct = await categorySchema.create({
             categoryId,
             name
         });
@@ -29,7 +29,7 @@ const create = async ({categoryId,name}) => {
 };
 const update = async (id, name) => {
     try {
-        const existing = await CategoryModel.findById(id).exec();
+        const existing = await categorySchema.findById(id).exec();
         if (!existing) {
             throw new Exception(Exception.ERROR_EXIST_PRODUCT);
         } else {

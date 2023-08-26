@@ -29,6 +29,29 @@ const create = async (req, res, next) => {
         });
     }
 };
+const Insert = async (req, res, next) => {
+    try {
+        const { name, price, describe, avatar, hinh, categoryId } = req.body;
+        console.log({ name, price, describe, avatar, hinh, categoryId });
+        await productRepositories.insertProduct({
+            name: name,
+            price: price,
+            avatar: avatar,
+            hinh: hinh,
+            describe: describe,
+            categoryId: categoryId,
+        });
+
+        res.status(httpStatusCode.INSERT_OK).json({
+            status: 201,
+            message: 'create product successfuly',
+        });
+    } catch (errors) {
+        res.status(httpStatusCode.INTERNAL_SERVER_ERROR).json({
+            message: errors.toString(),
+        });
+    }
+};
 const getAll = async (req, res) => {
     try {
         const data = await productRepositories.getAll();
@@ -171,6 +194,7 @@ const deleteProduct = async (req, res) => {
 };
 export default {
     create,
+    Insert,
     getAll,
     getById,
     getCate1,
@@ -179,5 +203,5 @@ export default {
     getProductSearch,
     updateProduct,
     deleteProduct,
-    getCateById
+    getCateById,
 };

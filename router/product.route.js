@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/', productController.getAll);
 router.post('/', upload.single('images'), productController.create);
+router.post('/create', productController.Insert);
 router.get('/cate1', productController.getCate1);
 router.get('/cate2', productController.getCate2);
 router.get('/search', productController.getProductSearch);
